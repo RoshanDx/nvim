@@ -28,6 +28,7 @@ lsp.setup()
 
 -- Make sure you setup `cmp` after lsp-zero
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
@@ -35,6 +36,10 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'emoji' }
+    },
+    formatting = {
+        format = lspkind.cmp_format({ with_text = true, maxwidth = 30, ellipsis_char = '...', })
     },
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({ select = false }),

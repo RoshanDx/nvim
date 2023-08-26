@@ -30,18 +30,18 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-    dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-    dashboard.button("s", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
-    dashboard.button("p", "  Project", "<CMD>Telescope projects<CR>"),
-    dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua<CR>"),
-    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+    dashboard.button("f ", "󰈞  Find file", ":Telescope find_files <CR>"),
+    dashboard.button("e ", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("r ", "  Recently used files", ":Telescope oldfiles <CR>"),
+    dashboard.button("t ", "󰊄  Find text", ":Telescope live_grep <CR>"),
+    dashboard.button("s ", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
+    dashboard.button("p ", "  Project", "<CMD>Telescope projects<CR>"),
+    dashboard.button("c ", "  Configuration", ":e ~/.config/nvim/init.lua<CR>"),
+    dashboard.button("q ", "󰅖  Quit Neovim", ":qa<CR>"),
 }
 
 local function footer()
-    return "Don't Stop Until You are Proud..."
+    return "IDE is temporary but VIM is forever"
 end
 
 dashboard.section.footer.val = footer()

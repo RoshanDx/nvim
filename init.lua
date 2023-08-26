@@ -17,6 +17,7 @@ require("plugin.indentline-config")
 require("plugin.gitsigns-config")
 require("plugin.bufferline-config")
 require("plugin.mason-config")
+require("plugin.lspkind-config")
 
 -- Language
 require("lang.java")
