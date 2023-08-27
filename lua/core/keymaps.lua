@@ -18,12 +18,18 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- noh - no highlight
+vim.keymap.set("n", "<esc>", ":noh<CR>")
+
 -- Normal --
 -- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts) -- left window
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts) -- up window
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts) -- down window
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts) -- right window
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)  -- left window
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts)  -- up window
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts)  -- down window
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)  -- right window
+
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts) -- Navigate page and center it
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts) -- Navigate page and center it
 
 -- Resize with arrows when using multiple windows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -40,6 +46,13 @@ vim.keymap.set("n", "<leader>h", ":nohlsearch<cr>", opts) -- No highlight search
 -- move text up and down
 vim.keymap.set("n", "<a-j>", "<esc>:m .+1<cr>==gi", opts) -- Alt-j
 vim.keymap.set("n", "<a-k>", "<esc>:m .-2<cr>==gi", opts) -- Alt-k
+
+-- when seaching text, keep the cursor in the middle
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+
+-- Copy and keep in the register
+vim.keymap.set("x", "<leader>p", "\"_dP", opts)
 
 -- insert --
 -- press jk fast to exit insert mode

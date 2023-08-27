@@ -174,6 +174,8 @@ local mappings = {
         X = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
         Q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
         q = { "<cmd>TroubleClose<cr>", "Quit (Trouble)" },
+        n = { "<cmd>lua require 'trouble'.next({skip_groups = true, jump = true})<cr>", "Next Trouble" },
+        p = { "<cmd>lua require 'trouble'.previous({skip_groups = true, jump = true})<cr>", "Previous Trouble" },
     }
 
 }
