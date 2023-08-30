@@ -93,22 +93,25 @@ local mappings = {
 
     -- Telescope
     f = {
-        name = "File Search",
+        name = "Telescope",
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files" },
         t = { "<cmd>Telescope live_grep <cr>", "Find Text Pattern In All Files" },
         r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
         b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
         p = { "<cmd>Telescope projects<cr>", "Find Projects" },
+        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+        m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+        R = { "<cmd>Telescope registers<cr>", "Registers" },
+        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+        C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
 
     s = {
-        name = "Search",
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        m = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>Telescope registers<cr>", "Registers" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        c = { "<cmd>Telescope commands<cr>", "Commands" },
+        name = "Search & Replace",
+        u = { "<cmd>lua require('spectre').open()<cr>", "UI" },
+        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Current Word" },
+        p = { "<cmd>lua require('spectre').open_file_search({select_word=true})<cr>", "Current File" },
     },
 
     -- LSP
@@ -123,10 +126,7 @@ local mappings = {
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = {
-            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-            "Workspace Symbols",
-        },
+        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
     },
 
     --Toggle Term
@@ -174,6 +174,8 @@ local mappings = {
         X = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics (Trouble)" },
         Q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix List (Trouble)" },
         q = { "<cmd>TroubleClose<cr>", "Quit (Trouble)" },
+        n = { "<cmd>lua require 'trouble'.next({skip_groups = true, jump = true})<cr>", "Next Trouble" },
+        p = { "<cmd>lua require 'trouble'.previous({skip_groups = true, jump = true})<cr>", "Previous Trouble" },
     }
 
 }

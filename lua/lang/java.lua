@@ -15,7 +15,7 @@ local features = {
 
     -- change this to `true` if you have `nvim-dap`,
     -- `java-test` and `java-debug-adapter` installed
-    debugger = false,
+    debugger = true,
 }
 
 local function get_jdtls_paths()
@@ -320,9 +320,9 @@ local mappings = {
         o = { "<cmd>lua require'dap'.step_over()<cr>", "Over" },
         O = { "<cmd>lua require'dap'.step_out()<cr>", "Out" },
         r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Repl" },
-        l = { "<cmd>lua require'dap'.run_last()<cr>", "Last" },
         u = { "<cmd>lua require'dapui'.toggle()<cr>", "UI" },
         x = { "<cmd>lua require'dap'.terminate()<cr>", "Exit" },
+        l = { "<cmd>lua require'dap'.clear_breakpoints()<cr>", "Clear Breakpoints" },
     },
 }
 

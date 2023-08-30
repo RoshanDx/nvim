@@ -17,6 +17,9 @@ require("plugin.indentline-config")
 require("plugin.gitsigns-config")
 require("plugin.bufferline-config")
 require("plugin.mason-config")
+require("plugin.lspkind-config")
+require("plugin.todocomments-config")
+require("plugin.nvim-dap-ui-config")
 
 -- Language
 require("lang.java")
