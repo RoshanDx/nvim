@@ -54,6 +54,13 @@ vim.keymap.set("n", "N", "Nzzzv", opts)
 -- Copy and keep in the register
 vim.keymap.set("x", "<leader>p", "\"_dP", opts)
 
+-- when seaching text, keep the cursor in the middle
+vim.keymap.set("n", "n", "nzzzv", opts)
+vim.keymap.set("n", "N", "Nzzzv", opts)
+
+-- Copy and keep in the register
+vim.keymap.set("x", "<leader>p", "\"_dP", opts)
+
 -- insert --
 -- press jk fast to exit insert mode
 vim.keymap.set("i", "jk", "<esc>", opts) -- Insert mode -> jk -> Normal mode
