@@ -69,20 +69,36 @@ return {
             { 'mfussenegger/nvim-jdtls',          lazy = true },
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },         -- Required
+            {
+                'hrsh7th/nvim-cmp',
+                dependencies = {
+                    "hrsh7th/cmp-emoji",
+                }
+            },                              -- Required
             { 'hrsh7th/cmp-nvim-lsp' },     -- Required
             { 'hrsh7th/cmp-buffer' },       -- Optional
             { 'hrsh7th/cmp-path' },         -- Optional
             { 'saadparwaiz1/cmp_luasnip' }, -- Optional
             { 'hrsh7th/cmp-nvim-lua' },     -- Optional
+            { 'onsails/lspkind-nvim' },
 
             -- Snippets
             { 'L3MON4D3/LuaSnip' },             -- Required
             { 'rafamadriz/friendly-snippets' }, -- Optional
+
+            -- Debug
+            { "mfussenegger/nvim-dap" },
+            { "rcarriga/nvim-dap-ui" },
+            {
+                --                "theHamsta/nvim-dap-virtual-text", -- virtual text for the debugger
+                --                opts = {},
+            },
+            { "rcarriga/cmp-dap" },
+
         }
     },
-
     -- Toggle Term
+
     {
         'akinsho/toggleterm.nvim',
         version = "*",
@@ -134,6 +150,7 @@ return {
             -- refer to the configuration section below
         }
     },
+
     {
         "folke/trouble.nvim",
         cmd = { "TroubleToggle", "Trouble" },
@@ -141,13 +158,11 @@ return {
     },
 
     -- Persistence (Session Management)
-    {
-        "folke/persistence.nvim",
-        event = "BufReadPre", -- this will only start session saving when an actual file was opened
-        opts = {
-            -- add any custom options here
-        }
-    },
+    --{
+    --    "folke/persistence.nvim",
+    --    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    --    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" }, },
+    --},
 
     -- Better Vim UI
     {
@@ -164,8 +179,39 @@ return {
             require("project_nvim").setup(opts)
             require("telescope").load_extension("projects")
         end,
-        keys = {
-            { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+    },
+
+    -- Better command UI
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
         },
-    }
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
+
+    {
+        "nvim-pack/nvim-spectre",
+        cmd = "Spectre",
+        opts = { open_cmd = "noswapfile vnew" },
+    },
+
+    {
+        "folke/neodev.nvim",
+        opts = {}
+    },
+
+    {
+        'rmagatti/goto-preview',
+        opts = {}
+    },
+
 }
