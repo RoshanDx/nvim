@@ -58,4 +58,7 @@ require("ibl").setup({
 		char = "▏",
 		tab_char = "▏",
 	},
+	scope = {
+		enabled = false,
+	},
 })
