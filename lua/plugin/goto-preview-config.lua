@@ -19,3 +19,11 @@ require('goto-preview').setup {
     stack_floating_preview_windows = true,                       -- Whether to nest floating windows
     preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
 }
+
+
+-- GoToPreview
+vim.keymap.set("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
+vim.keymap.set("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>")
+vim.keymap.set("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
+vim.keymap.set("n", "gpq", "<cmd>lua require('goto-preview').close_all_win()<CR>")
+vim.keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")

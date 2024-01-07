@@ -23,10 +23,10 @@ vim.keymap.set("n", "<esc>", ":noh<CR>")
 
 -- Normal --
 -- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)  -- left window
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)  -- up window
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)  -- down window
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)  -- right window
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts) -- left window
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts) -- up window
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts) -- down window
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts) -- right window
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", opts) -- Navigate page and center it
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts) -- Navigate page and center it
@@ -37,10 +37,9 @@ vim.keymap.set("n", "<c-down>", ":resize +2<cr>", opts)
 vim.keymap.set("n", "<c-right>", ":vertical resize +2<cr>", opts)
 vim.keymap.set("n", "<c-left>", ":vertical resize -2<cr>", opts)
 
-
 -- navigate buffers
-vim.keymap.set("n", "<tab>", ":bnext<cr>", opts)          -- Next Tab
-vim.keymap.set("n", "<s-tab>", ":bprevious<cr>", opts)    -- Previous tab
+vim.keymap.set("n", "<tab>", ":bnext<cr>", opts) -- Next Tab
+vim.keymap.set("n", "<s-tab>", ":bprevious<cr>", opts) -- Previous tab
 vim.keymap.set("n", "<leader>h", ":nohlsearch<cr>", opts) -- No highlight search
 
 -- move text up and down
@@ -52,7 +51,7 @@ vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
 -- Copy and keep in the register
-vim.keymap.set("x", "<leader>p", "\"_dP", opts)
+vim.keymap.set("x", "<leader>p", '"_dP', opts)
 
 -- insert --
 -- press jk fast to exit insert mode
@@ -81,10 +80,3 @@ vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
--- GoToPreview
-vim.keymap.set("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-vim.keymap.set("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>")
-vim.keymap.set("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
-vim.keymap.set("n", "gpq", "<cmd>lua require('goto-preview').close_all_win()<CR>")
-vim.keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")

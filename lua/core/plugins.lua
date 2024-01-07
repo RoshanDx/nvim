@@ -1,223 +1,256 @@
 return {
-    -- Alpha (Dashboard)
-    {
-        "goolord/alpha-nvim",
-        lazy = true,
-    },
 
-    -- Which-key Extension
-    {
-        "folke/which-key.nvim",
-        lazy = true,
-    },
+	-- Alpha (Dashboard)
+	{
+		"goolord/alpha-nvim",
+		lazy = true,
+	},
 
-    -- Bufferline
-    {
-        'akinsho/bufferline.nvim',
-        dependencies = 'nvim-tree/nvim-web-devicons'
-    },
+	-- Which-key Extension
+	{
+		"folke/which-key.nvim",
+		lazy = true,
+	},
 
-    -- Colorscheme
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
+	-- Bufferline
+	{
+		"akinsho/bufferline.nvim",
+		dependencies = "nvim-tree/nvim-web-devicons",
+	},
 
-    -- Lualine
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
-    },
+	-- Colorscheme
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 
-    -- File Explorer Tree
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        lazy = true,
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-        }
-    },
+	-- Lualine
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
-    -- Telescope (Fuzzy Finder)
-    {
-        'nvim-telescope/telescope.nvim',
-        lazy = true,
-        dependencies = {
-            { 'nvim-lua/plenary.nvim' },
-        }
-    },
+	-- File Explorer Tree
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		lazy = true,
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		},
+	},
 
-    -- Telescope File Browser
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    },
+	-- Telescope (Fuzzy Finder)
+	{
+		"nvim-telescope/telescope.nvim",
+		lazy = true,
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
 
-    -- Treesitter
-    {
-        "nvim-treesitter/nvim-treesitter",
-    },
+	-- Telescope File Browser
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
 
-    -- Language Support
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },             -- Required
-            { 'williamboman/mason.nvim' },           -- Optional
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-            { 'mfussenegger/nvim-jdtls',          lazy = true },
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
 
-            -- Autocompletion
-            {
-                'hrsh7th/nvim-cmp',
-                dependencies = {
-                    "hrsh7th/cmp-emoji",
-                }
-            },                              -- Required
-            { 'hrsh7th/cmp-nvim-lsp' },     -- Required
-            { 'hrsh7th/cmp-buffer' },       -- Optional
-            { 'hrsh7th/cmp-path' },         -- Optional
-            { 'saadparwaiz1/cmp_luasnip' }, -- Optional
-            { 'hrsh7th/cmp-nvim-lua' },     -- Optional
-            { 'onsails/lspkind-nvim' },
+	-- Autocompletion
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-emoji",
+		},
+	},
 
-            -- Snippets
-            { 'L3MON4D3/LuaSnip' },             -- Required
-            { 'rafamadriz/friendly-snippets' }, -- Optional
+	-- Snippets
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"saadparwaiz1/cmp_luasnip",
+		},
+	},
 
-            -- Debug
-            { "mfussenegger/nvim-dap" },
-            { "rcarriga/nvim-dap-ui" },
-            {
-                --                "theHamsta/nvim-dap-virtual-text", -- virtual text for the debugger
-                --                opts = {},
-            },
-            { "rcarriga/cmp-dap" },
+	{
+		"rafamadriz/friendly-snippets",
+	},
 
-        }
-    },
-    -- Toggle Term
+	-- Autocompletions
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
 
-    {
-        'akinsho/toggleterm.nvim',
-        version = "*",
-        config = true
-    },
+	{
+		"onsails/lspkind-nvim",
+	},
 
-    -- Auto Pairs
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        opts = {} -- this is equalent to setup({}) function
-    },
+	{
+		"williamboman/mason.nvim",
+	},
 
-    -- Nvim-Surround (Manipulating Surroundings)
-    {
-        "kylechui/nvim-surround",
-        version = "*", -- Use for stability; omit to use `main` branch for the latest features
-        event = "VeryLazy",
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
-    },
+	{
+		"williamboman/mason-lspconfig.nvim",
+	},
 
-    -- Undo-Tree
-    {
-        "jiaoshijie/undotree",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+	},
 
-    -- Indent-blankline
-    { "lukas-reineke/indent-blankline.nvim" },
+	{
+		"nvimtools/none-ls.nvim",
+	},
 
-    -- Git Integration
-    {
-        "lewis6991/gitsigns.nvim",
-    },
+	-- Toggle Term
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+	},
 
-    -- Todo Comments
-    {
-        "folke/todo-comments.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
-    },
+	-- Auto Pairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {}, -- this is equalent to setup({}) function
+	},
 
-    {
-        "folke/trouble.nvim",
-        cmd = { "TroubleToggle", "Trouble" },
-        opts = { use_diagnostic_signs = true },
-    },
+	-- Nvim-Surround (Manipulating Surroundings)
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup()
+		end,
+	},
 
-    -- Persistence (Session Management)
-    --{
-    --    "folke/persistence.nvim",
-    --    event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    --    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" }, },
-    --},
+	-- Undo-Tree
+	{
+		"jiaoshijie/undotree",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 
-    -- Better Vim UI
-    {
-        'stevearc/dressing.nvim',
-        opts = {},
-    },
+	-- Indent-blankline
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
-    -- Project fuzzy finder
-    {
-        "ahmedkhalf/project.nvim",
-        opts = {},
-        event = "VeryLazy",
-        config = function(_, opts)
-            require("project_nvim").setup(opts)
-            require("telescope").load_extension("projects")
-        end,
-    },
+	-- Git Integration
+	{
+		"lewis6991/gitsigns.nvim",
+	},
 
-    -- Better command UI
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- add any options here
-        },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
-    },
+	-- Todo Comments
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
 
-    {
-        "nvim-pack/nvim-spectre",
-        cmd = "Spectre",
-        opts = { open_cmd = "noswapfile vnew" },
-    },
+	{
+		"folke/trouble.nvim",
+		cmd = { "TroubleToggle", "Trouble" },
+		opts = { use_diagnostic_signs = true },
+	},
 
-    {
-        "folke/neodev.nvim",
-        opts = {}
-    },
+	-- Persistence (Session Management)
+	--{
+	--    "folke/persistence.nvim",
+	--    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+	--    opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" }, },
+	--},
 
-    {
-        'rmagatti/goto-preview',
-        opts = {}
-    },
+	-- Better Vim UI
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
+	},
 
+	-- Project fuzzy finder
+	{
+		"ahmedkhalf/project.nvim",
+		opts = {},
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("project_nvim").setup(opts)
+			require("telescope").load_extension("projects")
+		end,
+	},
+
+	-- Better command UI
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	},
+
+	{
+		"nvim-pack/nvim-spectre",
+		cmd = "Spectre",
+		opts = { open_cmd = "noswapfile vnew" },
+	},
+
+	{
+		"folke/neodev.nvim",
+		opts = {},
+	},
+
+	{
+		"rmagatti/goto-preview",
+		opts = {},
+	},
+
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"nvimtools/none-ls.nvim",
+		},
+	},
+
+	{
+		"olexsmir/gopher.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+	},
+
+	{
+		"terrortylor/nvim-comment",
+		-- lazy = true,
+		config = function()
+			require("nvim_comment").setup({
+				comment_empty = false,
+				line_mapping = "<leader>cl",
+				operator_mapping = "<leader>c",
+			})
+		end,
+	},
 }
