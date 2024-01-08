@@ -1,5 +1,7 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local lspkind = require("lspkind")
+
 require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
@@ -18,6 +20,9 @@ cmp.setup({
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
+	},
+	formatting = {
+		format = lspkind.cmp_format({ with_text = true, maxwidth = 30, ellipsis_char = "..." }),
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
