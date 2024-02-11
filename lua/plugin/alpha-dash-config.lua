@@ -40,11 +40,11 @@ dashboard.section.buttons.val = {
     dashboard.button("q ", "󰅖  Quit Neovim", ":qa<CR>"),
 }
 
-local function footer()
-    return "IDE is temporary but VIM is forever"
-end
+-- local function footer()
+--     return "IDE is temporary but VIM is forever"
+-- end
 
-dashboard.section.footer.val = footer()
+-- dashboard.section.footer.val = footer()
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"

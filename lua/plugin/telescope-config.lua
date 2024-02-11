@@ -3,20 +3,19 @@ if not status_ok then
     return
 end
 
-
 local actions = require("telescope.actions")
-local fb_actions = require("telescope").extensions.file_browser.actions
 local trouble = require("trouble.providers.telescope")
 
-require('telescope').setup {
+require("telescope").load_extension("file_browser")
+
+telescope.setup({
     defaults = {
         -- Default configuration for telescope goes here:
         -- config_key = value,
 
-        prompt_prefix = " ",
-        selection_caret = " ",
+        prompt_prefix = "> ",
+        -- selection_caret = "  ",
         path_display = { "smart" },
-
 
         mappings = {
             i = {
@@ -83,22 +82,21 @@ require('telescope').setup {
 
                 ["?"] = actions.which_key,
             },
-        }
+        },
     },
-    pickers = {
-    },
+    pickers = {},
     extensions = {
         file_browser = {
             mappings = {
-                ["i"] = {
-
-                },
+                ["i"] = {},
                 ["n"] = {
                     f = false,
                 },
             },
         },
-    }
-}
+    },
+})
 
-require("telescope").load_extension "file_browser"
+-- Telescope with LSP
+vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", {})
+vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", {})

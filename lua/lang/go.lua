@@ -5,19 +5,19 @@ local util = require("lspconfig/util")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 lspconfig.gopls.setup({
-	capabilities = capabilities,
-	cmd = { "gopls" },
-	filetypes = { "go", "gomod", "gowork", "gotmpl" },
-	root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-	settings = {
-		gopls = {
-			completeUnimported = true,
-			usePlaceholders = true,
-			analyses = {
-				unusedparams = true,
-			},
-		},
-	},
+    capabilities = capabilities,
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            },
+        },
+    },
 })
 
 local gopher = require("gopher")

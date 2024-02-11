@@ -7,10 +7,10 @@ require("neo-tree").setup({
         filtered_items = {
             hide_dotfiles = false,
             hide_hidden = false,
-        }
+        },
     },
     follow_current_file = {
-        enabled = focus
+        enabled = focus,
     },
     default_component_configs = {
         indent = {
